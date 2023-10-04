@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<crunchyroll>
+	<categoria>
+		<shonen>
+			<anime01>
+				<titulo>Shingeki no Kyojin</titulo>
+				<autor>Hajime Isayama</autor>
+				<codigo>01</codigo>
+				<espectadores>
+					<meses>
+						<enero>1000</enero>
+						<febrero>1000</febrero>
+						<marzo>1000</marzo>
+						<abril>1000</abril>
+						<mayo>1000</mayo>
+						<junio>1000</junio>
+						<julio>1000</julio>
+						<agosto>1000</agosto>
+						<septiembre>1000</septiembre>
+						<octubre>1000</octubre>
+						<noviembre>1000</noviembre>
+						<diciembre>1000</diciembre>
+					</meses>
+				</espectadores>
+			</anime01>
+			<anime02>
+				<titulo>One Piece</titulo>
+				<autor>Eichiro Oda</autor>
+				<codigo>02</codigo>
+				<espectadores>
+					<meses>
+						<enero>1000</enero>
+						<febrero>1000</febrero>
+						<marzo>1000</marzo>
+						<abril>1000</abril>
+						<mayo>1000</mayo>
+						<junio>1000</junio>
+						<julio>1000</julio>
+						<agosto>1000</agosto>
+						<septiembre>1000</septiembre>
+						<octubre>1000</octubre>
+						<noviembre>1000</noviembre>
+						<diciembre>10001000</diciembre>
+					</meses>
+				</espectadores>
+			</anime02>
+		</shonen>
+		<gore>
+			<anime01>
+				<titulo>One Piece</titulo>
+				<autor>Eichiro Oda</autor>
+				<codigo>02</codigo>
+				<espectadores>
+					<meses>
+						<enero>1000</enero>
+						<febrero>1000</febrero>
+						<marzo>1000</marzo>
+						<abril>1000</abril>
+						<mayo>1000</mayo>
+						<junio>1000</junio>
+						<julio>1000</julio>
+						<agosto>1000</agosto>
+						<septiembre>1000</septiembre>
+						<octubre>1000</octubre>
+						<noviembre>1000</noviembre>
+						<diciembre />
+					</meses>
+				</espectadores>
+			</anime01>
+		</gore>
+	</categoria>
+</crunchyroll>
