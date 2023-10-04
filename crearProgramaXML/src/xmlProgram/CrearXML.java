@@ -39,11 +39,11 @@ public class CrearXML {
 			    document.appendChild(raiz);
 
 			    // Crea elementos y atributos
-			    
 			    Element categ1 = document.createElement("categoria");
-			    raiz.appendChild(categ1);
+			    raiz.appendChild(categ1); // Elemento categoría
+			    
 			    Element shonen = document.createElement("shonen");
-			    categ1.appendChild(shonen);
+			    categ1.appendChild(shonen); // División entre géneros diferentes de la industria
 			    Element gore = document.createElement("gore");
 			    categ1.appendChild(gore);
 			    
@@ -81,7 +81,6 @@ public class CrearXML {
 	    		mes11.appendChild(document.createTextNode("1000"));
 			    Element mes12 = document.createElement("diciembre");
 			    mes12.appendChild(document.createTextNode("1000"));
-
 
 			    anime1.appendChild(titulo1);
 			    anime1.appendChild(autor1);
@@ -160,7 +159,7 @@ public class CrearXML {
 			    Element autor3 = document.createElement("autor");
 			    autor3.appendChild(document.createTextNode("Eichiro Oda"));
 			    Element codigo3 = document.createElement("codigo");
-			    codigo3.appendChild(document.createTextNode("02"));
+			    codigo3.appendChild(document.createTextNode("03"));
 			    Element espect3 = document.createElement("espectadores");
 			    Element meses3 = document.createElement("meses");
 			    espect3.appendChild(meses3);
@@ -187,7 +186,7 @@ public class CrearXML {
 			    Element mes3_11 = document.createElement("noviembre");
 			    mes3_11.appendChild(document.createTextNode("1000"));
 			    Element mes3_12 = document.createElement("diciembre");
-			    mes2_12.appendChild(document.createTextNode("1000"));
+			    mes3_12.appendChild(document.createTextNode("1000"));
 			    
 			    anime3.appendChild(titulo3);
 			    anime3.appendChild(autor3);
@@ -206,20 +205,59 @@ public class CrearXML {
 			    meses3.appendChild(mes3_11);
 			    meses3.appendChild(mes3_12);
 			    gore.appendChild(anime3);
-//			    
-//			    Element titulo3 = document.createElement("titulo");
-//			    titulo3.appendChild(document.createTextNode("Dragon Ball"));
-//			    Element autor3 = document.createElement("autor");
-//			    autor1.appendChild(document.createTextNode("Akira Toriyama"));
-//			    Element anio3 = document.createElement("anio");
-//			    anio1.appendChild(document.createTextNode("1992"));
-//			    
-//			    Element titulo4 = document.createElement("titulo");
-//			    titulo4.appendChild(document.createTextNode("Chainsaw Man"));
-//			    Element autor4 = document.createElement("autor");
-//			    autor1.appendChild(document.createTextNode("Tatsuya Endo"));
-//			    Element anio4 = document.createElement("anio");
-//			    anio1.appendChild(document.createTextNode("2022"));
+			    
+			    Element anime4 = document.createElement("anime02");
+			    Element titulo4 = document.createElement("titulo");
+			    titulo4.appendChild(document.createTextNode("Chainsaw Man"));
+			    Element autor4 = document.createElement("autor");
+			    autor4.appendChild(document.createTextNode("Tatsuya Endo"));
+			    Element codigo4 = document.createElement("codigo");
+			    codigo4.appendChild(document.createTextNode("04"));
+			    Element espect4 = document.createElement("espectadores");
+			    Element meses4 = document.createElement("meses");
+			    espect4.appendChild(meses4);
+			    Element mes4_1 = document.createElement("enero");
+			    mes4_1.appendChild(document.createTextNode("1000"));
+			    Element mes4_2 = document.createElement("febrero");
+			    mes4_2.appendChild(document.createTextNode("1000"));
+			    Element mes4_3 = document.createElement("marzo");
+			    mes4_3.appendChild(document.createTextNode("1000"));
+			    Element mes4_4 = document.createElement("abril");
+			    mes4_4.appendChild(document.createTextNode("1000"));
+			    Element mes4_5 = document.createElement("mayo");
+			    mes4_5.appendChild(document.createTextNode("1000"));
+			    Element mes4_6 = document.createElement("junio");
+			    mes4_6.appendChild(document.createTextNode("1000"));
+			    Element mes4_7 = document.createElement("julio");
+			    mes4_7.appendChild(document.createTextNode("1000"));
+			    Element mes4_8 = document.createElement("agosto");
+			    mes4_8.appendChild(document.createTextNode("1000"));
+			    Element mes4_9 = document.createElement("septiembre");
+			    mes4_9.appendChild(document.createTextNode("1000"));
+			    Element mes4_10 = document.createElement("octubre");
+			    mes4_10.appendChild(document.createTextNode("1000"));
+			    Element mes4_11 = document.createElement("noviembre");
+			    mes4_11.appendChild(document.createTextNode("1000"));
+			    Element mes4_12 = document.createElement("diciembre");
+			    mes4_12.appendChild(document.createTextNode("1000"));
+			    
+			    anime4.appendChild(titulo4);
+			    anime4.appendChild(autor4);
+			    anime4.appendChild(codigo4);
+			    anime4.appendChild(espect4);
+			    meses4.appendChild(mes4_1);
+			    meses4.appendChild(mes4_2);
+			    meses4.appendChild(mes4_3);
+			    meses4.appendChild(mes4_4);
+			    meses4.appendChild(mes4_5);
+			    meses4.appendChild(mes4_6);
+			    meses4.appendChild(mes4_7);
+			    meses4.appendChild(mes4_8);
+			    meses4.appendChild(mes4_9);
+			    meses4.appendChild(mes4_10);
+			    meses4.appendChild(mes4_11);
+			    meses4.appendChild(mes4_12);
+			    gore.appendChild(anime4);
 
 			    // Crea un objeto Transformer para escribir el archivo XML
 			    TransformerFactory transformerFactory = TransformerFactory.newInstance();
