@@ -8,7 +8,10 @@ public class Principal {
 //		CrearXML.crearXML();
 //		LeerXML2.Leer();
 //		NumEspectadores.NumEspec();
-        ModificarTitulo.modificarNombreAnimePorCodigo();
+//       ModificarTitulo.modificarNombreAnimePorCodigo();
+		Objeto persona = new Objeto("pepe", 46, "avenida avenida");
+        MeterObjeto meterObjeto = new MeterObjeto();
+        meterObjeto.MeterObjeto(persona);
 	}
 
 }
