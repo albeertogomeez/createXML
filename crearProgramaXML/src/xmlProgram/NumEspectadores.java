@@ -1,14 +1,16 @@
 package xmlProgram;
 
-import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
-public class LeerXML2 {
-    public static void Leer() {
-           
+public class NumEspectadores {
+
+	public static void NumEspec() {
+		
         try {
             // Crear un objeto DocumentBuilderFactory
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -51,6 +53,21 @@ public class LeerXML2 {
                 String noviembre = meses.getElementsByTagName("noviembre").item(0).getTextContent();
                 String diciembre = meses.getElementsByTagName("diciembre").item(0).getTextContent();
 
+                int numEnero = Integer.parseInt(enero);
+                int numFebrero = Integer.parseInt(febrero);
+                int numMarzo = Integer.parseInt(marzo);
+                int numAbril = Integer.parseInt(abril);
+                int numMayo = Integer.parseInt(mayo);
+                int numJunio = Integer.parseInt(junio);
+                int numJulio = Integer.parseInt(julio);
+                int numAgosto = Integer.parseInt(agosto);
+                int numSeptiembre = Integer.parseInt(septiembre);
+                int numOctubre = Integer.parseInt(octubre);
+                int numNoviembre = Integer.parseInt(noviembre);
+                int numDiciembre = Integer.parseInt(diciembre);
+                
+                int total= numEnero+numFebrero+numMarzo+numAbril+numMayo+numJunio+numJulio+numAgosto+numSeptiembre+numOctubre+numNoviembre+numDiciembre;
+                
                 System.out.println("Código: " + codigo);
                 System.out.println("Título: " + titulo);
                 System.out.println("Autor: " + autor);
@@ -66,6 +83,7 @@ public class LeerXML2 {
                 System.out.println("Espectadores octubre: " + octubre);
                 System.out.println("Espectadores noviembre: " + noviembre);
                 System.out.println("Espectadores diciembre: " + diciembre);
+                System.out.println("Espectadores totales al anio: " + total);
                 System.out.println("----------------------");
                 
                     } else {
@@ -78,6 +96,7 @@ public class LeerXML2 {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        }
-    }
+		
+	}
 
+}
