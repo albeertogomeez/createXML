@@ -1,57 +1,49 @@
 package xmlProgram;
 
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBElement;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
+import javax.xml.namespace.QName;
 import java.io.File;
-import java.io.IOException;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
-
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
+import java.util.ArrayList;
 
 public class MeterObjeto {
-	public void MeterObjeto(Objeto persona) {
+	public void guardarObjetoEnXML(Objeto objeto, String nombreArchivo) {
 		try {
-            // Cargar el archivo XML existente
-            File archivoXML = new File("nuevo_ejemplo.xml");
-            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-            Document doc = dBuilder.parse(archivoXML);
+            // Crea un contexto JAXB para la clase Objetos
+            JAXBContext context = JAXBContext.newInstance(Objetos.class);
 
-            // Crear un nuevo elemento persona y establecer sus atributos y nodos hijos
-            Element nuevaPersona = doc.createElement("persona");
+            // Crea un objeto Unmarshaller para leer el archivo XML existente
+            Unmarshaller unmarshaller = context.createUnmarshaller();
+            File archivoXML = new File(nombreArchivo);
 
-            Element nombre = doc.createElement("nombre");
-            nombre.appendChild(doc.createTextNode(persona.getNombre()));
-            nuevaPersona.appendChild(nombre);
+            Objeto objetos;
 
-            Element edad = doc.createElement("edad");
-            edad.appendChild(doc.createTextNode(String.valueOf(persona.getEdad())));
-            nuevaPersona.appendChild(edad);
+            // Si el archivo XML existe, lee el contenido y conviértelo en un Objetos
+            if (archivoXML.exists()) {
+                objetos = (Objeto) unmarshaller.unmarshal(archivoXML);
+            } else {
+                // Si el archivo no existe, crea un nuevo objeto Objetos
+                objetos = new Objeto();
+                objetos.setObjetos(new ArrayList<>());
+            }
 
-            Element direccion = doc.createElement("direccion");
-            direccion.appendChild(doc.createTextNode(persona.getDireccion()));
-            nuevaPersona.appendChild(direccion);
+            // Agrega el nuevo objeto a la lista existente de objetos
+            objetos.getObjetos().add(objeto);
 
-            // Añadir el nuevo elemento persona al elemento raíz del documento
-            doc.getDocumentElement().appendChild(nuevaPersona);
+            // Crea un objeto Marshaller
+            Marshaller marshaller = context.createMarshaller();
 
-            // Guardar los cambios en el archivo XML
-            TransformerFactory transformerFactory = TransformerFactory.newInstance();
-            Transformer transformer = transformerFactory.newTransformer();
-            DOMSource source = new DOMSource(doc);
-            StreamResult result = new StreamResult(archivoXML);
-            transformer.transform(source, result);
+            // Configura el marshaller para el formato de salida (opcional)
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
-            System.out.println("Nueva persona agregada al archivo XML correctamente.");
+            // Marshaliza el objeto Objetos en el archivo XML existente
+            marshaller.marshal(objetos, archivoXML);
 
-        } catch (ParserConfigurationException | IOException | org.xml.sax.SAXException | TransformerException e) {
+            System.out.println("Objeto añadido al archivo XML correctamente en " + archivoXML.getAbsolutePath());
+        } catch (JAXBException e) {
             e.printStackTrace();
         }
     }
